@@ -55,7 +55,7 @@ class RsenseClient
 
   startRsenseCommand: =>
     return if @rsenseStarted
-    exec("#{@rsensePath} start --port #{@port} --path #{@projectPath}",
+    exec("#{@rsensePath} start --port #{@port} --path \"#{@projectPath}\"",
       (error, stdout, stderr) ->
         if error != null
           atom.notifications.addError('Error starting rsense',
